@@ -4,6 +4,37 @@
   
   
   <entry>
+    <title>vue项目打包之后本地打开空白页面问题（包括vue-admin-template）</title>
+    <link href="/2022/09/25/vue%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85%E4%B9%8B%E5%90%8E%E6%9C%AC%E5%9C%B0%E6%89%93%E5%BC%80%E7%A9%BA%E7%99%BD%E9%A1%B5%E9%9D%A2%E9%97%AE%E9%A2%98%EF%BC%88%E5%8C%85%E6%8B%ACvue-template-admin%EF%BC%89/"/>
+    <url>/2022/09/25/vue%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85%E4%B9%8B%E5%90%8E%E6%9C%AC%E5%9C%B0%E6%89%93%E5%BC%80%E7%A9%BA%E7%99%BD%E9%A1%B5%E9%9D%A2%E9%97%AE%E9%A2%98%EF%BC%88%E5%8C%85%E6%8B%ACvue-template-admin%EF%BC%89/</url>
+    
+    <content type="html"><![CDATA[<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p><font color="green">注意这是在vue项目是在哈希模式下的配置</font></p><p>在通过vue cli脚手架建立的vue项目时，通过npm run dev运行打开对应的网页可以正常看到界面。但是运行npm run build命令打包之后，在本地打开dist文件夹目录的index.html时则界面无法正常显示，只要空白页。</p><h2 id="常规的vue项目解决办法"><a href="#常规的vue项目解决办法" class="headerlink" title="常规的vue项目解决办法"></a>常规的vue项目解决办法</h2><p>之所以出现空白页，使用浏览器打开index.html。F12之后发现在控制台中报错，发现很多css或者js没有找到。所已找到项目中config目录下的index.js文件中【 build】下的assetsPublicPath: ‘&#x2F;‘，将’&#x2F;‘改成’.&#x2F;‘。即将assetsPublicPath: ‘&#x2F;‘改成assetsPublicPath: ‘.&#x2F;‘。保存之后运行npm run buid重新打包然后到dist目录下打开index.html即可看到界面了</p><p><img src="/2022/09/25/vue%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85%E4%B9%8B%E5%90%8E%E6%9C%AC%E5%9C%B0%E6%89%93%E5%BC%80%E7%A9%BA%E7%99%BD%E9%A1%B5%E9%9D%A2%E9%97%AE%E9%A2%98%EF%BC%88%E5%8C%85%E6%8B%ACvue-template-admin%EF%BC%89/image-20220925235439069.png" alt="image-20220925235439069"></p><h2 id="vue-admin-template项目或vue-element-admin项目"><a href="#vue-admin-template项目或vue-element-admin项目" class="headerlink" title="vue admin template项目或vue element admin项目"></a>vue admin template项目或vue element admin项目</h2><p>vue admin template项目或者vue element admin项目中没有config目录，这里打包配置就直接找vue.config.js文件中的module.exports &#x3D; {}中的publicPath: process.env.NODE_ENV &#x3D;&#x3D;&#x3D; ‘production’ ? ‘&#x2F;‘ : ‘&#x2F;‘，将’&#x2F;‘改成’.&#x2F;‘。即改成publicPath: process.env.NODE_ENV &#x3D;&#x3D;&#x3D; ‘development’ ? ‘.&#x2F;‘ : ‘.&#x2F;‘，有些可能是publicPath:’&#x2F;‘这种形式，也是同样的修改步骤，publicPath:’.&#x2F;‘。就可以了，之后直接打开dist目录下的index.html就可以直接显示界面了，但是这里个常规的vue项目不一样。这里需要nginx代理部署或者其他的服务器部署才可以使用项目中的功能，比如登录等。不像常规的vue项目一样，打包之后直接打开dist目录下的index.html也是可以访问功能的。比如登录</p><p><img src="/2022/09/25/vue%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85%E4%B9%8B%E5%90%8E%E6%9C%AC%E5%9C%B0%E6%89%93%E5%BC%80%E7%A9%BA%E7%99%BD%E9%A1%B5%E9%9D%A2%E9%97%AE%E9%A2%98%EF%BC%88%E5%8C%85%E6%8B%ACvue-template-admin%EF%BC%89/image-20220926000639708.png" alt="image-20220926000639708"></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>原创</category>
+      
+      <category>vue项目打包之后本地打开空白页面问题（包括vue-admin-template）</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>vue</tag>
+      
+      <tag>vue打包</tag>
+      
+      <tag>vue-admin-template</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>我的第一篇博客</title>
     <link href="/2022/09/24/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/"/>
     <url>/2022/09/24/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
