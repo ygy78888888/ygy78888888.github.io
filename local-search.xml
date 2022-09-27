@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+  
+  <entry>
+    <title>我的第一篇博客</title>
+    <link href="/2022/09/24/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/"/>
+    <url>/2022/09/24/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
+    
+    <content type="html"><![CDATA[<p>不知道要写什么，刚上手。还是试着写中，先记录一下试试效果。到时候看看能不能直接部署到网上，还在探索阶段。</p><h2 id="我的第一篇博客"><a href="#我的第一篇博客" class="headerlink" title="我的第一篇博客"></a>我的第一篇博客</h2><p>不知道写什么，就写怎么搭建这个博客吧</p><h3 id="1、安装gitee的版本控制工具"><a href="#1、安装gitee的版本控制工具" class="headerlink" title="1、安装gitee的版本控制工具"></a>1、安装gitee的版本控制工具</h3><p>这里建议使用gitee，毕竟国内的访问速度比githup。版本控制工具在官网git下载：<a href="https://git-scm.com/download">Git - Downloads (git-scm.com)</a>，下载完成后记得注册一个码云账号。</p><h3 id="2、安装node-js"><a href="#2、安装node-js" class="headerlink" title="2、安装node.js"></a>2、安装node.js</h3><p>node.js下载官网：<a href="https://nodejs.org/en/">Node.js (nodejs.org)</a>，运行需要用到npm库和cnpm库，最好配置淘宝镜像 ，nodejs需要系统的全局环境变量，如果不配置，会心态崩的。</p><h3 id="3、选择一款自己喜欢Markdown工具"><a href="#3、选择一款自己喜欢Markdown工具" class="headerlink" title="3、选择一款自己喜欢Markdown工具"></a>3、选择一款自己喜欢Markdown工具</h3><p>我这里使用的是typora，可惜的是现在收费了。由于我是之前已经下载的，所以我的是永久免费的，至于还有其他的Markdown我还没有用过。</p><h3 id="4、安装Cnpm库"><a href="#4、安装Cnpm库" class="headerlink" title="4、安装Cnpm库"></a>4、安装Cnpm库</h3><p>win+r，输入如下命令</p><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">npm install -g cnpm --registry=https:<span class="hljs-regexp">//</span>registry.npm.taobao.org<br></code></pre></td></tr></table></figure><h3 id="5、安装Hexo"><a href="#5、安装Hexo" class="headerlink" title="5、安装Hexo"></a>5、安装Hexo</h3><figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs avrasm">cnpm install -g hexo-<span class="hljs-keyword">cli</span><br></code></pre></td></tr></table></figure><p>博客项目初始化，对应的项目文件夹下右键使用git版本控制工具的命令窗口输入如下命令，如我这里在ygylog目录下。这个根据自己的文件夹去定</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs csharp">hexo <span class="hljs-keyword">init</span><br>hexo s<br></code></pre></td></tr></table></figure><p>出现 Hexo is running at <a href="http://localhost:4000/">http://localhost:4000/</a> . Press Ctrl+C to stop。则说明个人博客搭建成功了，可以用浏览器访问了</p><p>发布自己的个人博客文章</p><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs actionscript">hexo <span class="hljs-keyword">new</span> <span class="hljs-string">&quot;我的第一篇博客&quot;</span><br></code></pre></td></tr></table></figure><p>运行这个命令之后，会生成一个md文档，使用Markdown软件编辑即可，保存然后hexo s命令重新运行即可</p><h3 id="6、博客界面美化"><a href="#6、博客界面美化" class="headerlink" title="6、博客界面美化"></a>6、博客界面美化</h3><h4 id="方式一"><a href="#方式一" class="headerlink" title="方式一"></a>方式一</h4><p>Hexo 5.0.0 版本以上，推荐通过 npm 直接安装，进入博客目录执行命令：（我用的是这个）</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">npm install --save hexo-theme-fluid<br></code></pre></td></tr></table></figure><p>如果下载失败用：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">cnpm install --save hexo-theme-fluid<br></code></pre></td></tr></table></figure><p>然后在博客目录下创建 _config.fluid.yml，将主题的 _config.yml (opens new window)内容复制过去。</p><h4 id="方式二"><a href="#方式二" class="headerlink" title="方式二"></a>方式二</h4><p>下载 最新 release 版本 (opens new window)解压到 themes 目录，并将解压出的文件夹重命名为 fluid。</p><p>指定主题<br>如下修改 Hexo 博客目录中的 _config.yml：<strong>注意：</strong>这里不要直接复制粘贴，不然会疯的。经历过的人才知道，因为这里在配置文件里面已经有了，所以再复制的话，yaml文件中的（key，value）不唯一。我们需要做的找到对应的key，将value值变成我们想要的</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">theme:</span> <span class="hljs-string">fluid</span>  <span class="hljs-comment"># 指定主题</span><br><br><span class="hljs-attr">language:</span> <span class="hljs-string">zh-CN</span>  <span class="hljs-comment"># 指定语言，会影响主题显示的语言，按需修改</span><br></code></pre></td></tr></table></figure><p>配置保存好之后</p><h4 id="创建「关于页」"><a href="#创建「关于页」" class="headerlink" title="创建「关于页」"></a>创建「关于页」</h4><p>首次使用主题的「关于页」需要手动创建：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">hexo new page about<br></code></pre></td></tr></table></figure><p>创建成功后修改 &#x2F;source&#x2F;about&#x2F;index.md，添加 layout 属性。</p><p>修改后的文件示例如下：</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-meta">---</span><br><span class="hljs-attr">title:</span> <span class="hljs-string">标题</span><br><br><span class="hljs-attr">layout:</span> <span class="hljs-string">about</span><br><span class="hljs-meta">---</span><br><span class="hljs-meta"></span><br><span class="hljs-string">这里写关于页的正文，支持</span> <span class="hljs-string">Markdown,</span> <span class="hljs-string">HTML</span><br></code></pre></td></tr></table></figure><p>这里的layout: about在博客导航栏关于那里有注意事项</p><p>其他的看官方配置</p><p><a href="https://hexo.fluid-dev.com/docs/start/#%E4%B8%BB%E9%A2%98%E7%AE%80%E4%BB%8B">开始使用 | Hexo Fluid 用户手册 (fluid-dev.com)</a></p><h3 id="7、结束语"><a href="#7、结束语" class="headerlink" title="7、结束语"></a>7、结束语</h3><p>无</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>我的第一篇博客</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>我的第一篇博客</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="/2022/09/23/hello-world/"/>
+    <url>/2022/09/23/hello-world/</url>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  
+</search>
